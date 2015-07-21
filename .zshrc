@@ -55,6 +55,9 @@ plugins=(git bundler osx rake ruby rails)
 
 export PATH="/usr/local/rvm/gems/ruby-1.9.3-p484/bin:/usr/local/rvm/gems/ruby-1.9.3-p484@global/bin:/usr/local/rvm/rubies/ruby-1.9.3-p484/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/rvm/bin:/usr/local/java/jdk1.7.0_02/bin:/usr/local/java/jdk1.7.0_02/jre/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
+if [ -d "$HOME/bin" ] ; then
+  PATH="$HOME/bin:$PATH"
+fi
 
 source $ZSH/oh-my-zsh.sh
 
