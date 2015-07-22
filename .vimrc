@@ -7,7 +7,8 @@ set autoindent
 set expandtab
 set history=300
 set mouse=a
-set number
+set relativenumber
+"set number
 set numberwidth=4
 set ruler
 set nobackup
