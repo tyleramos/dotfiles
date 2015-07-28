@@ -1,5 +1,3 @@
-execute pathogen#infect()
-
 " -- Configuration --
 let mapleader=" "
 
@@ -37,6 +35,13 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 syntax on
 colorscheme twilight256
 
+" Set NumberToggle Trigger to something other than C-n since NERDTree uses
+" recommends this trigger
+let g:NumberToggleTrigger="<Leader>tn"
+
+" Load bundles through pathogen
+execute pathogen#infect()
+
 " Start Nerdtree when vim starts if no file specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -44,3 +49,4 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 " Close vim if only remaining window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
