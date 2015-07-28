@@ -1,0 +1,7 @@
+[user]
+	email = tyler@automatedinsights.com
+	name = Tyler Amos
+[color]
+	ui = auto
+[core]
+  editor = vim -c 'startinsert'
