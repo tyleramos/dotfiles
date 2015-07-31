@@ -4,6 +4,7 @@ let mapleader=" "
 set autoindent
 set expandtab
 set history=300
+set hlsearch
 set mouse=a
 set relativenumber
 "set number
@@ -27,6 +28,9 @@ set splitbelow
 "set textwidth=80
 "set colorcolumn=+1
 
+" Press return to temporarily turn off highlighted search
+:nnoremap <CR> :nohlsearch<CR><CR>
+
 " -- Plugins --
 " Activates the CtrlP plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -38,6 +42,9 @@ colorscheme twilight256
 " Set NumberToggle Trigger to something other than C-n since NERDTree uses
 " recommends this trigger
 let g:NumberToggleTrigger="<Leader>tn"
+
+" Vim Multiple Cursor key bindings
+let g:multi_cursor_next_key='<C-w>'
 
 " Load bundles through pathogen
 execute pathogen#infect()
