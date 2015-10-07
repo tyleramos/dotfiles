@@ -28,9 +28,6 @@ set splitbelow
 "set textwidth=80
 "set colorcolumn=+1
 
-" Press return to temporarily turn off highlighted search
-:nnoremap <CR> :nohlsearch<CR><CR>
-
 " -- Plugins --
 " Activates the CtrlP plugin
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -39,12 +36,22 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 syntax on
 colorscheme twilight256
 
+" Press return to temporarily turn off highlighted search
+:nnoremap <CR> :nohlsearch<CR><CR>
+
+" Press // to search for highlighted text
+vnoremap // y/<C-R>"<CR>
+
 " Set NumberToggle Trigger to something other than C-n since NERDTree uses
 " recommends this trigger
 let g:NumberToggleTrigger="<Leader>tn"
 
 " Vim Multiple Cursor key bindings
-let g:multi_cursor_next_key='<C-w>'
+"let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-b>'
+"let g:multi_cursor_prev_key='<C-p>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
 
 " Load bundles through pathogen
 execute pathogen#infect()
@@ -57,3 +64,5 @@ map <C-n> :NERDTreeToggle<CR>
 " Close vim if only remaining window is nerdtree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" Start Ack with Command+Shift+F
+nmap <C-F> :Ack!<space>
